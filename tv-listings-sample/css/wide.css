@@ -1,0 +1,79 @@
+/** {
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#container {
+  width: 90%;
+  margin: auto;
+  background-image: url(http://api.ning.com/files/rqtWwxkEF1kcx0Qy*saEZYf0nUYuLQ2YD3-H1yQQSNESQD*8VJDwBRVMQemt99-GI2Sb9NsgQWAk1DC*j*uxzCITtNIuB*ox/entourage.jpg);
+  background-size: cover;
+}
+
+header, footer, .column, nav li, .line, #container > div {
+  border: 1px solid black;
+}
+
+.line {
+  height: 7px; 
+  width: 60%;
+  margin: 4px auto;
+  border-radius: 5px;
+}
+
+nav li {
+  width: 15%;
+  height: 40px;
+  float: left;
+  margin: 10px;
+}
+
+nav li:first-child {
+  float: right;
+}
+
+header, .row {
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+#container > div {
+  height: 400px;
+  margin: 20px 0;
+}
+
+.column {
+  width: 32%;
+  height: 200px;
+  float: left;
+  margin-right: 2%;
+}
+
+.column1 {
+  width: 30%;
+  height: 200px;
+  float: left;
+  margin-right: 2%;
+}
+
+.column2 {
+  width: 32%;
+  height: 200px;
+  float: left;
+  margin-right: 2%;
+}
+
+.column:last-child {
+  margin-right: 0;
+}
+
+footer {
+  padding: 2%;
+}*/

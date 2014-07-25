@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link href="css/global.css" rel="stylesheet">
+
+  <title>Hello World in Backbone.js</title>
+</head>
+<body>
+  <!-- ========= -->
+  <!-- Your HTML -->
+  <!-- ========= -->
+  
+<div class="container">
+    
+   <div id="header">
+  <div class="headerLeft">Guide /<span class="bcHi"> What's On</span></div>
+  <div class="headerRight"><span id="time"></span> / <span id="temp"></span><span id="avatar"><img src="res/images/avatar.png"></span></div>
+
+</div>
+    
+    <section id="menuContainer">
+        <ul id="menuList">
+            <li><a href="#/route/1">Profiles</a></li>
+            <li><a href="#/route/2">Search</a></li>
+            <li><a href="#/route/3">Browse</a></li>
+            <li><a href="#/route/4">Recordings</a></li>
+            <li><a href="#/route/5">TV Listings</a></li>
+            <li><a href="#/route/6">Settings</a></li>
+        </ul>
+    </section>
+    
+    <section id="app">
+        This is the App Viewport.<br> 
+        I will change according to the routes.
+    </section>
+
+
+  <!-- ========= -->
+  <!-- Libraries -->
+  <!-- ========= -->
+  <script src="js/libs/jquery/jquery.js" type="text/javascript"></script>
+  <script src="js/libs/underscore/underscore.js" type="text/javascript"></script>
+  <script src="js/libs/backbone/backbone.js" type="text/javascript"></script>
+  <script src="js/libs/jquery.simpleWeather.min.js"></script>
+
+  <!-- custom -->
+  <script type="text/javascript" src="js/custom/weather.js"></script> 
+  <script type="text/javascript" src="js/custom/timeStamp.js"></script>
+  
+  <!-- =============== -->
+  <!-- Javascript code -->
+  <!-- =============== -->
+  <script type="text/javascript">
+/**
+ * The Viewport
+ *
+ * This object handle what to display and how to display it into the
+ * application visibile space.
+ *
+ */
+var Viewport = Backbone.View.extend({
+    
+    // target item.
+    el: '#app',
+    
+    // display a string to the target item
+    render: function( str ) {
+        
+        // first visualization. it creates an item with the string.
+        if ( this.$('#content').length == 0 ) {
+            
+            // create the item with some attributes
+            /*var $em = $('<div>').html( str ).css({
+                background: 'yellow',
+                padding: '5px',
+                textAlign: 'center'
+            }).hide();*/
+            var $em = $('<div>').html( str ).attr({
+                id: 'content'
+            }).hide();
+
+            // append the item to the view's target
+            this.$el.html( '' );
+            this.$el.append( $em );
+            $em.fadeIn();
+        
+        // following visualizations. flash out the string then flash in with
+        // the new value. this way the "click" trigger a visible event to the screen!
+        } else {
+            
+            this.$('#content').stop().fadeOut(function(){
+                $(this).html( str ).fadeIn();
+            });
+            
+        }
+        
+    }
+});
+
+/**
+ * The Menu View
+ * this object handle menu actions and trigger a Router's reset action each time
+ * you click to a link.
+ *
+ * This way you can call the same route multiple times by clicking the same link.
+ */
+var Menu = Backbone.View.extend({
+    
+    el: '#menuList',
+    
+    events: {
+        'click a' : 'onClick'
+    },
+    
+    onClick: function( e ) {
+        
+        // uncomment this row to make it work!
+        router.navigate('/');
+        
+    }
+
+});
+
+
+/**
+ * The Router
+ * it translates url requests into actions.
+ *
+ * Here we always throw the same action with different params.
+ */
+var Router = Backbone.Router.extend({
+    
+    // routes configuration
+    routes: {
+        'route/:id' : 'defaultRoute'
+    },
+    
+    // the action. it uses global namespace's viewport object.
+    defaultRoute: function( routeId ) {
+       
+       if (routeId == 1){
+         viewport.render( '<div id="profileContent">Profiles</div>' );
+       } 
+
+       if (routeId == 2){
+         viewport.render('<div id="searchContent">Search</div>');
+       } 
+
+       if (routeId == 3){
+         viewport.render('<div id="dashboardContent">Dashboard</div>');
+       } 
+
+       if (routeId == 4){
+         viewport.render('<div id="dashboardContent">Recordings</div>');
+       } 
+
+       if (routeId == 5){
+         viewport.render('<div id="dashboardContent">TV Listings</div>');
+       } 
+
+       if (routeId == 6){
+         viewport.render('<div id="dashboardContent">Settings</div>');
+       } 
+
+        //viewport.render( 'You clicked route "' + routeId + '"' );
+    }
+
+
+    
+});
+
+
+// Run example's components.
+var viewport = new Viewport();
+var menu = new Menu();
+var router = new Router();
+Backbone.history.start();
+
+
+
+
+/**
+ * BackboneBoilerplate jsFiddle - please don't remove this comment!
+ * http://movableapp.com/2012/06/backbone-boilerplate-jsfiddle/
+ */
+
+
+
+
+  </script>
+  
+</body>
+</html>

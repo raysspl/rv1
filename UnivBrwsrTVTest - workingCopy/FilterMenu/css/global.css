@@ -1,0 +1,237 @@
+@font-face{font-family:robCondLight; src: url(../res/fonts/RobotoCondensed-Light.ttf);font-weight:normal;font-style:normal}
+
+body{
+
+	background:#000000 url(../res/images/bodyBg.png) no-repeat;
+	background-size:100% auto;
+	margin:0;
+	padding:0;
+	color:#ecfdfe;
+	font-family: 'robCondLight';
+	font-size:100%;
+}
+
+#header{
+	height:40px;
+	width:90%;
+	border-bottom:1px solid #5a616b;
+	margin:1% auto;
+	font-size:20px;
+	padding-top:40px;
+	/*margin-bottom: 5%;*/
+	padding-bottom: 1%;
+}
+
+/*#avatar{
+	float: right;
+	margin-top: -10px;
+}*/
+
+div.headerLeft{
+	float:left;
+	width:45%;
+}
+
+/*This is Font-Awesome. This makes icon implementation through code much easier.*/
+.fa {
+	color: white;
+	margin: 0 2% 0 0; 
+}
+
+div.headerRight{
+	float: right;
+	width: 55%;
+	height: 20px;
+	margin-top: 1%;
+}
+
+div.column1 {
+	width: 27.5%;
+	float: right;
+	/*margin-right: 1%*/
+}
+
+div.column2 {
+	width: 27.5%;
+	float: right !important;
+	padding: 0 !important;
+	margin: 0 0 10% 0;	
+
+}
+
+h1.brand-name1 {
+	color: white;
+}
+
+#menuContainer{
+	width: 25%;
+	margin-top:1%;
+	height:700px;
+	max-height:1024px;
+	float:left;
+	position:relative;
+}
+
+#menuContainer ul{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+
+#menuContainer ul li{
+	height:30px;
+	padding:10px 0px 10px 20%;
+	font-size:26px;
+	background: url('../res/images/mainNavArrowFaded.png') no-repeat 90%;
+}
+
+#menuContainer ul li.selected{
+	/*background-color:#ed3f36;*/
+	background:#ed3f36 url('../res/images/mainNavArrow.png') no-repeat 90%;
+
+}
+
+#menuContainer ul li.menuItem{
+	background-color:transparent;
+}
+
+#menuBarOverlay{
+	position:absolute;
+	background:#ed3f36;
+	width:0%;
+	height:30px;
+	padding:10px 0px 10px 0px;
+	font-size:26px;
+	z-index:99999;
+	margin-top:96px;
+}
+
+#filterMenu{
+	margin-left:30%;
+}
+
+#filterMenu ul{
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+#filterMenu ul li{
+	display:inline;
+	float:left;
+}
+
+.bcHi{
+	color:#1ac5a7;
+	font-size: 25px;
+}
+#pig{
+	position:absolute;
+	bottom:0;
+	margin-left:5%;
+}
+
+.subTitle{
+	color:#919aa7;
+	text-transform:uppercase;
+	font-size:18px;
+	margin:0;
+	padding:0;
+}
+
+.pigProgTitle{
+	color:#1ac5a7;
+	font-size:20px;
+	margin:0;
+	padding:0;
+}
+
+.pigProgInfo{
+	color:#919aa7;
+	font-size:18px;
+	margin:0;
+	padding:0;
+}
+
+#contentContainer{
+	height:720px;
+	width:73%;
+	float:right;
+	overflow:hidden;
+}
+
+#contentNav{
+	position:relative;
+	clear:both;
+}
+
+#colSettingsMenu{
+	width:100%;
+	float: left;
+	font-family: 'robCondLight';
+	font-size:18px;
+	text-transform:uppercase;
+	color:#919aa7;
+	clear:both;
+}
+
+#colSettingsMenu ul{
+	list-style:none;
+	margin: 0;
+	padding: 0;
+}
+
+#colSettingsMenu ul li{
+	position:relative;
+	z-index:99999;
+	float: left;
+	display: inline;
+	margin: 25px 6px 5px 6px;
+	width: 230px;
+}
+
+/*--content placeholders---*/
+
+#contentNav h1{
+	color:#919aa7;
+	font-family: 'robCondLight';
+}
+
+#dashboard{
+	float:left;
+}
+
+#listingsGrid{
+	height:2000px;
+	margin-left:200%;
+}
+#listingsGrid, #listingsGrid img{
+	width:95%;
+}
+ 
+#contentCol1, #contentCol2, #contentCol3, #contentCol4{
+	position:relative;
+	float:left;
+	height:275px;
+	width:2000px;
+
+}
+
+#contentCol1 img, #contentCol2 img, #contentCol3 img, #contentCol4 img{
+	height:100%;
+}
+
+#contentCol1 div, #contentCol2 div, #contentCol3 div, #contentCol4 div{
+	/*width:auto;*/
+	width:auto;
+	height:220px;
+	margin-right:10px;
+	padding:2px;
+	float:left;
+	display:inline;
+}
+
+#contentCol1 .selected, #contentCol2 .selected, #contentCol3 .selected, #contentCol4 .selected{
+	background: #ed3f36;
+}
